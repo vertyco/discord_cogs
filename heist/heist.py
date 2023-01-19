@@ -417,7 +417,7 @@ class Heist(commands.Cog):
     async def _stats_heist(self, ctx):
         """Shows your Heist stats"""
         author = ctx.message.author
-        avatar = ctx.message.author.avatar_url
+        avatar = ctx.message.author.avatar.url if ctx.message.author.avatar else None
         guild = ctx.guild
         config = await self.thief.get_guild_settings(guild)
         theme = await self.thief.get_guild_theme(guild)
